@@ -1,0 +1,29 @@
+{
+  "name": "transport-tycoon",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "author": "Michael Roth <mail@mroth.net>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf lib",
+    "format": "prettier --write 'src/**/*.ts'",
+    "lint": "tslint -p .",
+    "prepare": "npm run clean && npm run build",
+    "prepublishOnly": "npm run lint && npm test"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^8.0.0",
+    "@types/node": "^12.12.7",
+    "prettier": "1.19.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.2"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "trailingComma": "all",
+    "singleQuote": false
+  }
+}
