@@ -1,21 +1,37 @@
 {
   "name": "transport-tycoon",
   "version": "0.1.0",
-  "main": "lib/index.js",
   "author": "Michael Roth <mail@mroth.net>",
   "license": "MIT",
+  "files": [
+    "src/**/*.ts",
+    "lib/**/*.js", "lib/**/*.d.ts", "lib/**/*.map",
+    "yarn.lock"
+  ],
+  "bin": {
+    "transport-tycoon": "lib/cli.js"
+  },
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf lib",
+    "test": "jest --all",
+    "watch": "jest --watch",
     "format": "prettier --write 'src/**/*.ts'",
     "lint": "tslint -p .",
     "prepare": "npm run clean && npm run build",
-    "prepublishOnly": "npm run lint && npm test"
+    "prepublishOnly": "npm run lint && npm test",
+    "exercise1": "node lib/cli.js exercise1"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^4.0.0"
   },
   "devDependencies": {
-    "@types/fs-extra": "^8.0.0",
+    "@types/jest": "^24.0.22",
     "@types/node": "^12.12.7",
+    "jest": "^24.9.0",
     "prettier": "1.19.1",
+    "ts-jest": "^24.1.0",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.2"
@@ -24,5 +40,12 @@
     "printWidth": 120,
     "trailingComma": "all",
     "singleQuote": false
+  },
+  "jest": {
+    "roots": [
+      "src"
+    ],
+    "preset": "ts-jest",
+    "testEnvironment": "node"
   }
 }
