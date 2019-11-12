@@ -6,7 +6,7 @@ export function isDestination(destination: string): destination is Destination {
   return destinations.includes(destination);
 }
 
-export function toDestination(destination: string): Destination {
+export function nameToDestination(destination: string): Destination {
   const result = destination.toUpperCase();
   if (!isDestination(result)) {
     throw new Error("Unknown destination");
