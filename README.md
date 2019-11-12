@@ -1,6 +1,6 @@
 # Transport Tycoon Exercises
 
-Some DDD exercises for DDD. See: [Softwarepark/exercises
+Some DDD exercises. See: [Softwarepark/exercises
 ](https://github.com/Softwarepark/exercises/blob/master/transport-tycoon.md)
 
 
