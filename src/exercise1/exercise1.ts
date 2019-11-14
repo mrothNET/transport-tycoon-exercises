@@ -1,4 +1,4 @@
-import { nameToDestination } from "./Destination";
+import { stringToDestination } from "./Destination";
 import { Time } from "./Time";
 import { TransportTycoon } from "./TransportTycoon";
 
@@ -7,7 +7,7 @@ export function exercise1(cargoList: string): Time {
 
   const deliverTimes = cargoList
     .split("")
-    .map(nameToDestination)
+    .map(stringToDestination)
     .map(destination => tt.book(destination));
 
   return Math.max(...deliverTimes);

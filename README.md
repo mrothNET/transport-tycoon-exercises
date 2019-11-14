@@ -16,7 +16,7 @@ function exercise1(cargoList: string): Time {
 
   const deliverTimes = cargoList
     .split("")
-    .map(nameToDestination)
+    .map(stringToDestination)
     .map(destination => tt.book(destination));
 
   return Math.max(...deliverTimes);

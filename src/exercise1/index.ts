@@ -1,5 +1,5 @@
 export { Time, Duration } from "./Time";
-export { Destination, nameToDestination as toDestination } from "./Destination";
+export { Destination, stringToDestination } from "./Destination";
 export { TransportTycoon } from "./TransportTycoon";
 export { Vehicle } from "./Vehicle";
 
