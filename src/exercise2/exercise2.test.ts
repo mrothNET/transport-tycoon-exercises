@@ -26,3 +26,13 @@ test('exercise2("B")', () => {
   expect(events[2].cargo).toBeUndefined();
   expect(events[3].cargo).toBeUndefined();
 });
+
+test('exercise2("AABABBAB")', () => {
+  expect(exercise2("A")).toMatchSnapshot();
+  expect(exercise2("B")).toMatchSnapshot();
+  expect(exercise2("AA")).toMatchSnapshot();
+  expect(exercise2("BB")).toMatchSnapshot();
+  expect(exercise2("AB")).toMatchSnapshot();
+  expect(exercise2("BA")).toMatchSnapshot();
+  expect(exercise2("AABABBAB")).toMatchSnapshot();
+});
