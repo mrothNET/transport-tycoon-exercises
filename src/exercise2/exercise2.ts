@@ -1,16 +1,16 @@
-import { stringToDestination } from "./Destination";
-import { Time } from "./Time";
-import { TransportTycoon } from "./TransportTycoon";
 import { Cargo } from "./Cargo";
+import { stringToDestination } from "./Destination";
+import { Event } from "./Event";
+import { TransportTycoon } from "./TransportTycoon";
 
-export function exercise2(cargoList: string): Time {
+export function exercise2(cargoList: string): Event[] {
   const tt = new TransportTycoon();
 
-  const deliverTimes = cargoList
+  cargoList
     .split("")
     .map(stringToDestination)
     .map(destination => new Cargo("FACTORY", destination))
-    .map(cargo => tt.book(cargo));
+    .forEach(cargo => tt.book(cargo));
 
-  return Math.max(...deliverTimes);
+  return tt.getAllEvents();
 }
