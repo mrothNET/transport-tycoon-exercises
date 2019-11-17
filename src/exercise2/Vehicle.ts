@@ -1,7 +1,8 @@
 import { Cargo } from "./Cargo";
 import { EventStore } from "./EventStore";
 import { Location } from "./Location";
-import { Duration, Time } from "./Time";
+import { travelDuration } from "./routing";
+import { Time } from "./Time";
 
 export class Vehicle {
   public available: Time = 0;
@@ -16,10 +17,11 @@ export class Vehicle {
     this.eventStore = eventStore;
   }
 
-  public book(desiredDeparture: Time, travelTime: Duration, destination: Location, cargo: Cargo): Time {
+  public book(desiredDeparture: Time, destination: Location, cargo: Cargo): Time {
+    const travel = travelDuration(this.origin, destination);
     const departure = Math.max(this.available, desiredDeparture);
-    const arrival = departure + travelTime;
-    this.available = arrival + travelTime;
+    const arrival = departure + travel;
+    this.available = arrival + travel;
 
     const metadata = { transport_id: this.eventStore.createUniqueTransportID(), kind: this.kind };
 

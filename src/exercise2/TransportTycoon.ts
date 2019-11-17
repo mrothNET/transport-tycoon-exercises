@@ -1,11 +1,7 @@
 import { Cargo } from "./Cargo";
 import { EventStore } from "./EventStore";
 import { Ship } from "./Ship";
-import { Duration } from "./Time";
 import { Vehicle } from "./Vehicle";
-
-const TRUCK_TO_PORT: Duration = 1;
-const TRUCK_TO_B: Duration = 5;
 
 export class TransportTycoon {
   private eventStore: EventStore;
@@ -25,12 +21,12 @@ export class TransportTycoon {
   public book(cargo: Cargo): void {
     switch (cargo.destination) {
       case "A":
-        const arrivalAtPort = this.firstAvailableTruck().book(0, TRUCK_TO_PORT, "PORT", cargo);
+        const arrivalAtPort = this.firstAvailableTruck().book(0, "PORT", cargo);
         this.ship.book(arrivalAtPort, cargo);
         break;
 
       case "B":
-        this.firstAvailableTruck().book(0, TRUCK_TO_B, "B", cargo);
+        this.firstAvailableTruck().book(0, "B", cargo);
         break;
     }
   }
