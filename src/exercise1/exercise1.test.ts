@@ -9,7 +9,7 @@ const testVectors: Array<[string, Time]> = [
   ["AB", 5],
   ["BA", 5],
   ["ABB", 7],
-  ["BAA", 13]
+  ["BAA", 13],
 ];
 
 test.each(testVectors)("exercise1(%p)", (cargoList, totalDeliveryTime) => {
