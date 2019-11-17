@@ -16,7 +16,7 @@ export class Vehicle {
     this.eventStore = eventStore;
   }
 
-  public book(desiredDeparture: Time, travelTime: Duration, destination: Location, cargo: Cargo[]): Time {
+  public book(desiredDeparture: Time, travelTime: Duration, destination: Location, cargo: Cargo): Time {
     const departure = Math.max(this.available, desiredDeparture);
     const arrival = departure + travelTime;
     this.available = arrival + travelTime;
@@ -24,8 +24,8 @@ export class Vehicle {
     const metadata = { transport_id: this.eventStore.createUniqueTransportID(), kind: this.kind };
 
     this.eventStore.push(
-      { ...metadata, event: "DEPART", time: departure, location: this.origin, destination, cargo },
-      { ...metadata, event: "ARRIVE", time: arrival, location: destination, cargo },
+      { ...metadata, event: "DEPART", time: departure, location: this.origin, destination, cargo: [cargo] },
+      { ...metadata, event: "ARRIVE", time: arrival, location: destination, cargo: [cargo] },
       { ...metadata, event: "DEPART", time: arrival, location: destination, destination: this.origin },
       { ...metadata, event: "ARRIVE", time: this.available, location: this.origin },
     );

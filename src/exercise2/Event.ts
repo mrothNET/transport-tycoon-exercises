@@ -2,7 +2,7 @@ import { Cargo } from "./Cargo";
 import { Location } from "./Location";
 import { Time } from "./Time";
 
-export type EventType = "DEPART" | "ARRIVE";
+export type EventType = "LOAD" | "DEPART" | "ARRIVE" | "UNLOAD";
 
 export interface Event {
   event: EventType;

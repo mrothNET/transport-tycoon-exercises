@@ -1,5 +1,5 @@
-import { exercise2 } from "./exercise2";
 import { Cargo } from "./Cargo";
+import { exercise2 } from "./exercise2";
 
 test('exercise2("B")', () => {
   const events = exercise2("B");

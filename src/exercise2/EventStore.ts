@@ -28,6 +28,8 @@ export class EventStore {
 const compareEvents = firstBy("time").thenBy(e => eventTypeOrder[(e as Event).event] || 0);
 
 const eventTypeOrder = {
-  ARRIVE: -1,
-  DEPART: 1,
+  ARRIVE: -2,
+  UNLOAD: -1,
+  LOAD: 1,
+  DEPART: 2,
 };

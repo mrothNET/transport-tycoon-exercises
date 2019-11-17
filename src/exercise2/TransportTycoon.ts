@@ -1,39 +1,42 @@
 import { Cargo } from "./Cargo";
 import { EventStore } from "./EventStore";
-import { Duration, Time } from "./Time";
+import { Ship } from "./Ship";
+import { Duration } from "./Time";
 import { Vehicle } from "./Vehicle";
 
+const TRUCK_TO_PORT: Duration = 1;
+const TRUCK_TO_B: Duration = 5;
+
 export class TransportTycoon {
-  private truckToPort: Duration = 1;
-  private shipToA: Duration = 4;
-  private truckToB: Duration = 5;
-
   private eventStore: EventStore;
-
   private trucks: Vehicle[];
-  private ship: Vehicle;
+  private ship: Ship;
 
   constructor() {
     this.eventStore = new EventStore();
     this.trucks = Array.from(Array(2), () => new Vehicle("TRUCK", "FACTORY", this.eventStore));
-    this.ship = new Vehicle("SHIP", "PORT", this.eventStore);
+    this.ship = new Ship("PORT", "A", 4, this.eventStore);
   }
 
   public getAllEvents() {
     return this.eventStore.getAllEvents();
   }
 
-  public book(cargo: Cargo): Time {
+  public book(cargo: Cargo): void {
     switch (cargo.destination) {
       case "A":
-        const arrivalAtPort = this.firstAvailableTruck().book(0, this.truckToPort, "PORT", [cargo]);
-        const arrivalAtA = this.ship.book(arrivalAtPort, this.shipToA, "A", [cargo]);
-        return arrivalAtA;
+        const arrivalAtPort = this.firstAvailableTruck().book(0, TRUCK_TO_PORT, "PORT", cargo);
+        this.ship.book(arrivalAtPort, cargo);
+        break;
 
       case "B":
-        const arrivalAtB = this.firstAvailableTruck().book(0, this.truckToB, "B", [cargo]);
-        return arrivalAtB;
+        this.firstAvailableTruck().book(0, TRUCK_TO_B, "B", cargo);
+        break;
     }
+  }
+
+  public closeBooking(): void {
+    this.ship.closeBooking();
   }
 
   private firstAvailableTruck(): Vehicle {
