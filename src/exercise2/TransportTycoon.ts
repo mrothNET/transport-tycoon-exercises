@@ -1,4 +1,4 @@
-import { Destination } from "./Destination";
+import { Cargo } from "./Cargo";
 import { Duration, Time } from "./Time";
 import { Vehicle } from "./Vehicle";
 
@@ -10,8 +10,8 @@ export class TransportTycoon {
   private trucks = Array.from(Array(2), () => new Vehicle());
   private ship = new Vehicle();
 
-  public book(destination: Destination): Time {
-    switch (destination) {
+  public book(cargo: Cargo): Time {
+    switch (cargo.destination) {
       case "A":
         const arrivalAtPort = this.firstAvailableTruck().book(0, this.truckToPort);
         const arrivalAtA = this.ship.book(arrivalAtPort, this.shipToA);
