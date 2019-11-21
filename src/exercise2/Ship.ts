@@ -1,7 +1,8 @@
 import { Cargo } from "./Cargo";
-import { EventStore } from "./EventStore";
 import { Location } from "./Location";
 import { Time } from "./Time";
+import { LoadingTourPlaner } from "./TourPlaner";
+import { TourPublisher } from "./TourPublisher";
 
 const LOADING_DURATION = 1;
 const UNLOADING_DURATION = 1;
@@ -12,17 +13,16 @@ export class Ship {
 
   private origin: Location;
   private destination: Location;
-
-  private cargo: Cargo[] = [];
   private capacity: number;
+  private cargo: Cargo[] = [];
 
-  private eventStore: EventStore;
+  private publisher: TourPublisher;
 
-  constructor(origin: Location, destination: Location, capacity: number, eventStore: EventStore) {
+  constructor(origin: Location, destination: Location, capacity: number, tourPublisher: TourPublisher) {
     this.origin = origin;
     this.destination = destination;
     this.capacity = capacity;
-    this.eventStore = eventStore;
+    this.publisher = tourPublisher;
   }
 
   public book(arrivalAtPort: Time, cargo: Cargo): void {
@@ -41,32 +41,10 @@ export class Ship {
   }
 
   private makeJourney(): void {
-    const loading = this.loading;
-    const departure = loading + LOADING_DURATION;
-    const arrival = departure + TRAVEL_DURATION;
-    const unload = arrival + UNLOADING_DURATION;
-    const back = unload + TRAVEL_DURATION;
-
-    // tslint:disable-next-line: variable-name
-    const transport_id = this.eventStore.createUniqueTransportID();
-
-    const kind = "SHIP";
-    const origin = this.origin;
-    const destination = this.destination;
-    const cargo = this.cargo;
-
-    const metadata = { transport_id, kind };
-
-    this.eventStore.push(
-      { ...metadata, event: "LOAD", time: loading, location: origin, destination, cargo },
-      { ...metadata, event: "DEPART", time: departure, location: origin, destination, cargo },
-      { ...metadata, event: "ARRIVE", time: arrival, location: destination, cargo },
-      { ...metadata, event: "UNLOAD", time: unload, location: destination, cargo },
-      { ...metadata, event: "DEPART", time: unload, location: destination, destination: origin },
-      { ...metadata, event: "ARRIVE", time: back, location: origin },
-    );
-
-    this.loading = back;
+    const planer = new LoadingTourPlaner(LOADING_DURATION, TRAVEL_DURATION, UNLOADING_DURATION);
+    const plan = planer.schedule(this.loading);
+    this.publisher.publish(this.origin, this.destination, plan, this.cargo);
+    this.loading = plan.returnArrival;
     this.cargo = [];
   }
 }

@@ -1,6 +1,7 @@
 import { Cargo } from "./Cargo";
 import { EventStore } from "./EventStore";
 import { Ship } from "./Ship";
+import { TourPublisher } from "./TourPublisher";
 import { Vehicle } from "./Vehicle";
 
 export class TransportTycoon {
@@ -10,8 +11,8 @@ export class TransportTycoon {
 
   constructor() {
     this.eventStore = new EventStore();
-    this.trucks = Array.from(Array(2), () => new Vehicle("TRUCK", "FACTORY", this.eventStore));
-    this.ship = new Ship("PORT", "A", 4, this.eventStore);
+    this.trucks = Array.from(Array(2), () => new Vehicle(new TourPublisher("TRUCK", this.eventStore)));
+    this.ship = new Ship("PORT", "A", 4, new TourPublisher("SHIP", this.eventStore));
   }
 
   public getAllEvents() {
@@ -21,12 +22,12 @@ export class TransportTycoon {
   public book(cargo: Cargo): void {
     switch (cargo.destination) {
       case "A":
-        const arrivalAtPort = this.firstAvailableTruck().book(0, "PORT", cargo);
+        const arrivalAtPort = this.firstAvailableTruck().book("FACTORY", "PORT", cargo);
         this.ship.book(arrivalAtPort, cargo);
         break;
 
       case "B":
-        this.firstAvailableTruck().book(0, "B", cargo);
+        this.firstAvailableTruck().book("FACTORY", "B", cargo);
         break;
     }
   }

@@ -1,37 +1,25 @@
 import { Cargo } from "./Cargo";
-import { EventStore } from "./EventStore";
 import { Location } from "./Location";
 import { travelDuration } from "./routing";
 import { Time } from "./Time";
+import { SimpleTourPlaner } from "./TourPlaner";
+import { TourPublisher } from "./TourPublisher";
 
 export class Vehicle {
   public available: Time = 0;
 
-  private eventStore: EventStore;
-  private kind: string;
-  private origin: Location;
+  private publisher: TourPublisher;
 
-  constructor(kind: string, origin: Location, eventStore: EventStore) {
-    this.kind = kind;
-    this.origin = origin;
-    this.eventStore = eventStore;
+  constructor(tourPublisher: TourPublisher) {
+    this.publisher = tourPublisher;
   }
 
-  public book(desiredDeparture: Time, destination: Location, cargo: Cargo): Time {
-    const travel = travelDuration(this.origin, destination);
-    const departure = Math.max(this.available, desiredDeparture);
-    const arrival = departure + travel;
-    this.available = arrival + travel;
-
-    const metadata = { transport_id: this.eventStore.createUniqueTransportID(), kind: this.kind };
-
-    this.eventStore.push(
-      { ...metadata, event: "DEPART", time: departure, location: this.origin, destination, cargo: [cargo] },
-      { ...metadata, event: "ARRIVE", time: arrival, location: destination, cargo: [cargo] },
-      { ...metadata, event: "DEPART", time: arrival, location: destination, destination: this.origin },
-      { ...metadata, event: "ARRIVE", time: this.available, location: this.origin },
-    );
-
-    return arrival;
+  public book(origin: Location, destination: Location, cargo: Cargo): Time {
+    const travel = travelDuration(origin, destination);
+    const planer = new SimpleTourPlaner(travel);
+    const plan = planer.schedule(this.available);
+    this.publisher.publish(origin, destination, plan, [cargo]);
+    this.available = plan.returnArrival;
+    return plan.arrival;
   }
 }
