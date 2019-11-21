@@ -25,7 +25,7 @@ export class EventStore {
   }
 }
 
-const compareEvents = firstBy("time").thenBy(e => (eventTypeOrder[(e as Event).event] ?? 0));
+const compareEvents = firstBy("time").thenBy(e => eventTypeOrder[(e as Event).event] ?? 0);
 
 const eventTypeOrder = {
   ARRIVE: -2,
