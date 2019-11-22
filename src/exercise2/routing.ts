@@ -1,26 +1,16 @@
 import { Location } from "./Location";
-import { Duration } from "./Time";
+import { TourPlaner } from "./TourPlaner";
 
-const ROUTING_TABLE: { [origin: string]: { [destination: string]: Duration } } = {
+const routingTable: { [origin: string]: { [destination: string]: TourPlaner } } = {
   FACTORY: {
-    PORT: 1,
-    B: 5,
+    PORT: new TourPlaner(1),
+    B: new TourPlaner(5),
   },
   PORT: {
-    A: 6,
+    A: new TourPlaner(1, 6, 1),
   },
 };
 
-export function travelDuration(origin: Location, destination: Location): Duration {
-  const routes = ROUTING_TABLE[origin];
-  if (typeof routes !== "object") {
-    throw new Error(`No routing available at: ${origin}`);
-  }
-
-  const duration = routes[destination];
-  if (typeof duration !== "number") {
-    throw new Error(`No routing available for destination ${destination} at ${origin}`);
-  }
-
-  return duration;
+export function getTourPlaner(origin: Location, destination: Location): TourPlaner {
+  return routingTable[origin][destination];
 }

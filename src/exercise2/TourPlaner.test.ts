@@ -8,7 +8,7 @@ test("Invalid number of arguments", () => {
   expect(() => new TourPlaner(1, 2)).toThrow(errorMessage);
   // @ts-ignore
   expect(() => new TourPlaner(1, 2, 3, 4)).toThrow(errorMessage);
-})
+});
 
 test("Simple tour", () => {
   const planer = new TourPlaner(1);
