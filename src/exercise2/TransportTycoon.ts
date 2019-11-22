@@ -11,7 +11,11 @@ export class TransportTycoon {
 
   constructor() {
     this.eventStore = new EventStore();
-    this.trucks = Array.from(Array(2), () => new Vehicle(new TourPublisher("TRUCK", this.eventStore)));
+
+    this.trucks = Array(2)
+      .fill(new TourPublisher("TRUCK", this.eventStore))
+      .map(tourPublisher => new Vehicle(tourPublisher));
+
     this.ship = new Ship("PORT", "A", 4, new TourPublisher("SHIP", this.eventStore));
   }
 
