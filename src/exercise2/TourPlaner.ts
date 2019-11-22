@@ -9,46 +9,42 @@ export interface TourPlan {
   returnArrival: Time;
 }
 
-export interface TourPlaner {
-  schedule(startTime: Time): TourPlan;
-}
+export class TourPlaner {
+  private readonly loadUnload!: boolean;
+  private readonly loading!: Duration;
+  private readonly travel!: Duration;
+  private readonly unloading!: Duration;
 
-export class SimpleTourPlaner implements TourPlaner {
-  private readonly travelTime: Duration;
-
-  constructor(travel: Duration) {
-    this.travelTime = travel;
-  }
-
-  public schedule(startTime: Time): TourPlan {
-    const departure = startTime;
-    const arrival = departure + this.travelTime;
-    const returnDeparture = arrival;
-    const returnArrival = returnDeparture + this.travelTime;
-
-    return { departure, arrival, returnDeparture, returnArrival };
-  }
-}
-
-export class LoadingTourPlaner implements TourPlaner {
-  private readonly loadingTime: Duration;
-  private readonly travelTime: Duration;
-  private readonly unloadingTime: Duration;
-
-  constructor(loading: Duration, travel: Duration, unloading: Duration) {
-    this.loadingTime = loading;
-    this.travelTime = travel;
-    this.unloadingTime = unloading;
+  constructor(travel: Duration);
+  constructor(loading: Duration, travel: Duration, unloading: Duration);
+  constructor(...args: Duration[]) {
+    if (args.length === 1) {
+      const [travel] = args;
+      this.init(false, 0, travel, 0);
+    } else if (args.length === 3) {
+      const [loading, travel, unloading] = args;
+      this.init(true, loading, travel, unloading);
+    } else {
+      throw new Error("Invalid number of arguments");
+    }
   }
 
   public schedule(startTime: Time): TourPlan {
     const loading = startTime;
-    const departure = loading + this.loadingTime;
-    const arrival = departure + this.travelTime;
-    const unload = arrival + this.unloadingTime;
+    const departure = loading + this.loading;
+    const arrival = departure + this.travel;
+    const unload = arrival + this.unloading;
     const returnDeparture = unload;
-    const returnArrival = returnDeparture + this.travelTime;
+    const returnArrival = returnDeparture + this.travel;
 
-    return { loading, departure, arrival, unload, returnDeparture, returnArrival };
+    if (this.loadUnload) {
+      return { loading, departure, arrival, unload, returnDeparture, returnArrival };
+    } else {
+      return { departure, arrival, returnDeparture, returnArrival };
+    }
+  }
+
+  private init(loadUnload: boolean, loading: Duration, travel: Duration, unloading: Duration): void {
+    Object.assign(this, { loadUnload, loading, travel, unloading });
   }
 }

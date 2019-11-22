@@ -1,7 +1,7 @@
 import { Cargo } from "./Cargo";
 import { Location } from "./Location";
 import { Time } from "./Time";
-import { LoadingTourPlaner } from "./TourPlaner";
+import { TourPlaner } from "./TourPlaner";
 import { TourPublisher } from "./TourPublisher";
 
 const LOADING_DURATION = 1;
@@ -41,7 +41,7 @@ export class Ship {
   }
 
   private makeJourney(): void {
-    const planer = new LoadingTourPlaner(LOADING_DURATION, TRAVEL_DURATION, UNLOADING_DURATION);
+    const planer = new TourPlaner(LOADING_DURATION, TRAVEL_DURATION, UNLOADING_DURATION);
     const plan = planer.schedule(this.loading);
     this.publisher.publish(this.origin, this.destination, plan, this.cargo);
     this.loading = plan.returnArrival;
