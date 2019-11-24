@@ -1,6 +1,3 @@
 /node_modules
 /lib
 /yarn-error.log
-/logs/
-/trace.py
-*.log
