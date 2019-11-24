@@ -4,12 +4,7 @@ import { Location } from "./Location";
 import { TourPlan } from "./TourPlaner";
 
 export class TourPublisher {
-  private readonly kind: string;
-  private readonly eventStore: EventStore;
-
-  constructor(kind: string, eventStore: EventStore) {
-    this.kind = kind;
-    this.eventStore = eventStore;
+  constructor(private readonly kind: string, private readonly eventStore: EventStore) {
   }
 
   public publish(origin: Location, destination: Location, tourPlan: TourPlan, cargo: Cargo[]): void {

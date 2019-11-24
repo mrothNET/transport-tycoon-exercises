@@ -9,12 +9,8 @@ export class Vehicle {
   public available: Time = 0;
 
   private schedule?: { loading: Time; origin: Location; destination: Location; cargo: Cargo[]; tourPlan: TourPlan };
-  private capacity: number;
-  private publisher: TourPublisher;
 
-  constructor(capacity: number, tourPublisher: TourPublisher) {
-    this.capacity = capacity;
-    this.publisher = tourPublisher;
+  constructor(private capacity: number, private tourPublisher: TourPublisher) {
   }
 
   public book(arrivalAtPort: Time, origin: Location, destination: Location, cargo: Cargo): Time {
@@ -64,7 +60,7 @@ export class Vehicle {
 
   private makeJourney(): void {
     const { origin, destination, cargo, tourPlan } = this.schedule!;
-    this.publisher.publish(origin, destination, tourPlan, cargo);
+    this.tourPublisher.publish(origin, destination, tourPlan, cargo);
     this.available = tourPlan.returnArrival;
     delete this.schedule;
   }
