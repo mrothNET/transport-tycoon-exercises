@@ -7,6 +7,7 @@ export interface TourPlan {
   unload?: Time;
   returnDeparture: Time;
   returnArrival: Time;
+  cargoAvailableDestination: Time;
 }
 
 export class TourPlaner {
@@ -38,9 +39,9 @@ export class TourPlaner {
     const returnArrival = returnDeparture + this.travel;
 
     if (this.loadUnload) {
-      return { loading, departure, arrival, unload, returnDeparture, returnArrival };
+      return { loading, departure, arrival, unload, returnDeparture, returnArrival, cargoAvailableDestination: returnDeparture }; // prettier-ignore
     } else {
-      return { departure, arrival, returnDeparture, returnArrival };
+      return { departure, arrival, returnDeparture, returnArrival, cargoAvailableDestination: returnDeparture };
     }
   }
 
