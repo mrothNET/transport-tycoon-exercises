@@ -41,7 +41,7 @@ test("Full tour with loading and unloading", () => {
   expect(tour.loading).toEqual(3);
   expect(tour.departure).toEqual(4);
   expect(tour.arrival).toEqual(6);
-  expect(tour.unload).toEqual(9);
+  expect(tour.unload).toEqual(6);
   expect(tour.returnDeparture).toEqual(9);
   expect(tour.returnArrival).toEqual(11);
 });

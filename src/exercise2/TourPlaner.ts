@@ -32,16 +32,23 @@ export class TourPlaner {
 
   public schedule(startTime: Time): TourPlan {
     const loading = startTime;
-    const departure = loading + this.loading;
+    const loadingComplete = loading + this.loading;
+
+    const departure = loadingComplete;
     const arrival = departure + this.travel;
-    const unload = arrival + this.unloading;
-    const returnDeparture = unload;
+
+    const unload = arrival;
+    const unloadComplete = unload + this.unloading;
+
+    const cargoAvailableDestination = unloadComplete;
+
+    const returnDeparture = unloadComplete;
     const returnArrival = returnDeparture + this.travel;
 
     if (this.loadUnload) {
-      return { loading, departure, arrival, unload, returnDeparture, returnArrival, cargoAvailableDestination: returnDeparture }; // prettier-ignore
+      return { loading, departure, arrival, unload, returnDeparture, returnArrival, cargoAvailableDestination };
     } else {
-      return { departure, arrival, returnDeparture, returnArrival, cargoAvailableDestination: returnDeparture };
+      return { departure, arrival, returnDeparture, returnArrival, cargoAvailableDestination };
     }
   }
 
