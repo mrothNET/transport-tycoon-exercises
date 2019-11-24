@@ -1,6 +1,5 @@
 import { Cargo } from "./Cargo";
 import { EventStore } from "./EventStore";
-import { TourPublisher } from "./TourPublisher";
 import { Vehicle } from "./Vehicle";
 
 export class TransportTycoon {
@@ -11,11 +10,11 @@ export class TransportTycoon {
   constructor() {
     this.eventStore = new EventStore();
 
-    const truckPublisher = new TourPublisher("TRUCK", this.eventStore);
-    const shipPublisher = new TourPublisher("SHIP", this.eventStore);
+    const makeTruck = () => new Vehicle("TRUCK", 1, this.eventStore);
+    const makeShip = () => new Vehicle("SHIP", 4, this.eventStore);
 
-    this.trucks = [new Vehicle(1, truckPublisher), new Vehicle(1, truckPublisher)];
-    this.ship = new Vehicle(4, shipPublisher);
+    this.trucks = [makeTruck(), makeTruck()];
+    this.ship = makeShip();
   }
 
   public getAllEvents() {

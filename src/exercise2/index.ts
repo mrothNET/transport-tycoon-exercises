@@ -1,7 +1,7 @@
 export { Cargo } from "./Cargo";
 export { Destination, stringToDestination } from "./Destination";
 export { Event } from "./Event";
-export { createUniqueTransportID, EventStore } from "./EventStore";
+export { EventStore } from "./EventStore";
 export { Location } from "./Location";
 export { getTourPlaner } from "./routing";
 export { Time, Duration } from "./Time";

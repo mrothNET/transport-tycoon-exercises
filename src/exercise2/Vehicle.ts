@@ -1,4 +1,5 @@
 import { Cargo } from "./Cargo";
+import { EventStore } from "./EventStore";
 import { Location } from "./Location";
 import { getTourPlaner } from "./routing";
 import { Time } from "./Time";
@@ -9,8 +10,11 @@ export class Vehicle {
   public available: Time = 0;
 
   private schedule?: { loading: Time; origin: Location; destination: Location; cargo: Cargo[]; tourPlan: TourPlan };
+  private readonly tourPublisher: TourPublisher;
 
-  constructor(private capacity: number, private tourPublisher: TourPublisher) {}
+  constructor(kind: string, private capacity: number, eventStore: EventStore) {
+    this.tourPublisher = new TourPublisher(kind, eventStore);
+  }
 
   public book(arrivalAtOrigin: Time, origin: Location, destination: Location, cargo: Cargo): Time {
     if (this.scheduleMismatches(arrivalAtOrigin, origin, destination)) {

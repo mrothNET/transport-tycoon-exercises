@@ -1,12 +1,6 @@
 import { firstBy } from "thenby";
 import { Event } from "./Event";
 
-let numTransportIDs = 0;
-
-export function createUniqueTransportID(): number {
-  return ++numTransportIDs;
-}
-
 export class EventStore {
   private events: Event[] = [];
   private length = 0;

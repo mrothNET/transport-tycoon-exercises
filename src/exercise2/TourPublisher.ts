@@ -1,13 +1,19 @@
 import { Cargo } from "./Cargo";
-import { createUniqueTransportID, EventStore } from "./EventStore";
+import { EventStore } from "./EventStore";
 import { Location } from "./Location";
 import { TourPlan } from "./TourPlaner";
 
+let numTransportIDs = 0;
+
 export class TourPublisher {
-  constructor(private readonly kind: string, private readonly eventStore: EventStore) {}
+  private readonly transportId: number;
+
+  constructor(private readonly kind: string, private readonly eventStore: EventStore) {
+    this.transportId = ++numTransportIDs;
+  }
 
   public publish(origin: Location, destination: Location, tourPlan: TourPlan, cargo: Cargo[]): void {
-    const metadata = { transport_id: createUniqueTransportID(), kind: this.kind };
+    const metadata = { transport_id: this.transportId, kind: this.kind };
     const { startTime, loadingDuration, departure, arrival, unloadDuration, returnDeparture, returnArrival } = tourPlan;
 
     this.eventStore.publish(
