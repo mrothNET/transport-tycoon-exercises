@@ -5,7 +5,7 @@ Array [
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 2,
+        "cargo_id": 5,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -15,12 +15,12 @@ Array [
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 0,
-    "transport_id": 2,
+    "transport_id": 7,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 2,
+        "cargo_id": 5,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -29,12 +29,12 @@ Array [
     "kind": "TRUCK",
     "location": "PORT",
     "time": 1,
-    "transport_id": 2,
+    "transport_id": 7,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 2,
+        "cargo_id": 5,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -44,7 +44,7 @@ Array [
     "kind": "SHIP",
     "location": "PORT",
     "time": 1,
-    "transport_id": 3,
+    "transport_id": 8,
   },
   Object {
     "destination": "FACTORY",
@@ -52,19 +52,19 @@ Array [
     "kind": "TRUCK",
     "location": "PORT",
     "time": 1,
-    "transport_id": 2,
+    "transport_id": 7,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 2,
-    "transport_id": 2,
+    "transport_id": 7,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 2,
+        "cargo_id": 5,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -74,12 +74,12 @@ Array [
     "kind": "SHIP",
     "location": "PORT",
     "time": 2,
-    "transport_id": 3,
+    "transport_id": 8,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 2,
+        "cargo_id": 5,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -88,12 +88,12 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 8,
-    "transport_id": 3,
+    "transport_id": 8,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 2,
+        "cargo_id": 5,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -102,7 +102,7 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 9,
-    "transport_id": 3,
+    "transport_id": 8,
   },
   Object {
     "destination": "PORT",
@@ -110,14 +110,14 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 9,
-    "transport_id": 3,
+    "transport_id": 8,
   },
   Object {
     "event": "ARRIVE",
     "kind": "SHIP",
     "location": "PORT",
     "time": 15,
-    "transport_id": 3,
+    "transport_id": 8,
   },
 ]
 `;
@@ -127,7 +127,7 @@ Array [
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 3,
+        "cargo_id": 6,
         "destination": "B",
         "origin": "FACTORY",
       },
@@ -137,12 +137,12 @@ Array [
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 0,
-    "transport_id": 4,
+    "transport_id": 9,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 3,
+        "cargo_id": 6,
         "destination": "B",
         "origin": "FACTORY",
       },
@@ -151,7 +151,7 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 5,
-    "transport_id": 4,
+    "transport_id": 9,
   },
   Object {
     "destination": "FACTORY",
@@ -159,14 +159,14 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 5,
-    "transport_id": 4,
+    "transport_id": 9,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 10,
-    "transport_id": 4,
+    "transport_id": 9,
   },
 ]
 `;
@@ -176,7 +176,7 @@ Array [
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 4,
+        "cargo_id": 7,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -186,12 +186,12 @@ Array [
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 0,
-    "transport_id": 5,
+    "transport_id": 10,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 5,
+        "cargo_id": 8,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -201,12 +201,12 @@ Array [
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 0,
-    "transport_id": 6,
+    "transport_id": 11,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 4,
+        "cargo_id": 7,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -215,12 +215,12 @@ Array [
     "kind": "TRUCK",
     "location": "PORT",
     "time": 1,
-    "transport_id": 5,
+    "transport_id": 10,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 5,
+        "cargo_id": 8,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -229,17 +229,17 @@ Array [
     "kind": "TRUCK",
     "location": "PORT",
     "time": 1,
-    "transport_id": 6,
+    "transport_id": 11,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 4,
+        "cargo_id": 7,
         "destination": "A",
         "origin": "FACTORY",
       },
       Cargo {
-        "cargo_id": 5,
+        "cargo_id": 8,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -249,7 +249,7 @@ Array [
     "kind": "SHIP",
     "location": "PORT",
     "time": 1,
-    "transport_id": 7,
+    "transport_id": 12,
   },
   Object {
     "destination": "FACTORY",
@@ -257,7 +257,7 @@ Array [
     "kind": "TRUCK",
     "location": "PORT",
     "time": 1,
-    "transport_id": 5,
+    "transport_id": 10,
   },
   Object {
     "destination": "FACTORY",
@@ -265,31 +265,31 @@ Array [
     "kind": "TRUCK",
     "location": "PORT",
     "time": 1,
-    "transport_id": 6,
+    "transport_id": 11,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 2,
-    "transport_id": 5,
+    "transport_id": 10,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 2,
-    "transport_id": 6,
+    "transport_id": 11,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 4,
+        "cargo_id": 7,
         "destination": "A",
         "origin": "FACTORY",
       },
       Cargo {
-        "cargo_id": 5,
+        "cargo_id": 8,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -299,17 +299,17 @@ Array [
     "kind": "SHIP",
     "location": "PORT",
     "time": 2,
-    "transport_id": 7,
+    "transport_id": 12,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 4,
+        "cargo_id": 7,
         "destination": "A",
         "origin": "FACTORY",
       },
       Cargo {
-        "cargo_id": 5,
+        "cargo_id": 8,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -318,17 +318,17 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 8,
-    "transport_id": 7,
+    "transport_id": 12,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 4,
+        "cargo_id": 7,
         "destination": "A",
         "origin": "FACTORY",
       },
       Cargo {
-        "cargo_id": 5,
+        "cargo_id": 8,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -337,7 +337,7 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 9,
-    "transport_id": 7,
+    "transport_id": 12,
   },
   Object {
     "destination": "PORT",
@@ -345,14 +345,14 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 9,
-    "transport_id": 7,
+    "transport_id": 12,
   },
   Object {
     "event": "ARRIVE",
     "kind": "SHIP",
     "location": "PORT",
     "time": 15,
-    "transport_id": 7,
+    "transport_id": 12,
   },
 ]
 `;
@@ -362,7 +362,7 @@ Array [
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 6,
+        "cargo_id": 9,
         "destination": "B",
         "origin": "FACTORY",
       },
@@ -372,12 +372,12 @@ Array [
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 0,
-    "transport_id": 8,
+    "transport_id": 13,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 7,
+        "cargo_id": 10,
         "destination": "B",
         "origin": "FACTORY",
       },
@@ -387,12 +387,12 @@ Array [
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 0,
-    "transport_id": 9,
+    "transport_id": 14,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 6,
+        "cargo_id": 9,
         "destination": "B",
         "origin": "FACTORY",
       },
@@ -401,12 +401,12 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 5,
-    "transport_id": 8,
+    "transport_id": 13,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 7,
+        "cargo_id": 10,
         "destination": "B",
         "origin": "FACTORY",
       },
@@ -415,7 +415,7 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 5,
-    "transport_id": 9,
+    "transport_id": 14,
   },
   Object {
     "destination": "FACTORY",
@@ -423,7 +423,7 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 5,
-    "transport_id": 8,
+    "transport_id": 13,
   },
   Object {
     "destination": "FACTORY",
@@ -431,21 +431,21 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 5,
-    "transport_id": 9,
+    "transport_id": 14,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 10,
-    "transport_id": 8,
+    "transport_id": 13,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 10,
-    "transport_id": 9,
+    "transport_id": 14,
   },
 ]
 `;
@@ -455,7 +455,7 @@ Array [
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 8,
+        "cargo_id": 11,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -465,12 +465,12 @@ Array [
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 0,
-    "transport_id": 10,
+    "transport_id": 15,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 9,
+        "cargo_id": 12,
         "destination": "B",
         "origin": "FACTORY",
       },
@@ -480,12 +480,12 @@ Array [
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 0,
-    "transport_id": 11,
+    "transport_id": 16,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 8,
+        "cargo_id": 11,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -494,12 +494,12 @@ Array [
     "kind": "TRUCK",
     "location": "PORT",
     "time": 1,
-    "transport_id": 10,
+    "transport_id": 15,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 8,
+        "cargo_id": 11,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -509,7 +509,7 @@ Array [
     "kind": "SHIP",
     "location": "PORT",
     "time": 1,
-    "transport_id": 12,
+    "transport_id": 17,
   },
   Object {
     "destination": "FACTORY",
@@ -517,19 +517,19 @@ Array [
     "kind": "TRUCK",
     "location": "PORT",
     "time": 1,
-    "transport_id": 10,
+    "transport_id": 15,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 2,
-    "transport_id": 10,
+    "transport_id": 15,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 8,
+        "cargo_id": 11,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -539,12 +539,12 @@ Array [
     "kind": "SHIP",
     "location": "PORT",
     "time": 2,
-    "transport_id": 12,
+    "transport_id": 17,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 9,
+        "cargo_id": 12,
         "destination": "B",
         "origin": "FACTORY",
       },
@@ -553,7 +553,7 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 5,
-    "transport_id": 11,
+    "transport_id": 16,
   },
   Object {
     "destination": "FACTORY",
@@ -561,12 +561,12 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 5,
-    "transport_id": 11,
+    "transport_id": 16,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 8,
+        "cargo_id": 11,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -575,12 +575,12 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 8,
-    "transport_id": 12,
+    "transport_id": 17,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 8,
+        "cargo_id": 11,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -589,7 +589,7 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 9,
-    "transport_id": 12,
+    "transport_id": 17,
   },
   Object {
     "destination": "PORT",
@@ -597,21 +597,21 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 9,
-    "transport_id": 12,
+    "transport_id": 17,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 10,
-    "transport_id": 11,
+    "transport_id": 16,
   },
   Object {
     "event": "ARRIVE",
     "kind": "SHIP",
     "location": "PORT",
     "time": 15,
-    "transport_id": 12,
+    "transport_id": 17,
   },
 ]
 `;
@@ -621,7 +621,7 @@ Array [
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 10,
+        "cargo_id": 13,
         "destination": "B",
         "origin": "FACTORY",
       },
@@ -631,12 +631,12 @@ Array [
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 0,
-    "transport_id": 13,
+    "transport_id": 18,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 11,
+        "cargo_id": 14,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -646,12 +646,12 @@ Array [
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 0,
-    "transport_id": 14,
+    "transport_id": 19,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 11,
+        "cargo_id": 14,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -660,12 +660,12 @@ Array [
     "kind": "TRUCK",
     "location": "PORT",
     "time": 1,
-    "transport_id": 14,
+    "transport_id": 19,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 11,
+        "cargo_id": 14,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -675,7 +675,7 @@ Array [
     "kind": "SHIP",
     "location": "PORT",
     "time": 1,
-    "transport_id": 15,
+    "transport_id": 20,
   },
   Object {
     "destination": "FACTORY",
@@ -683,19 +683,19 @@ Array [
     "kind": "TRUCK",
     "location": "PORT",
     "time": 1,
-    "transport_id": 14,
+    "transport_id": 19,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 2,
-    "transport_id": 14,
+    "transport_id": 19,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 11,
+        "cargo_id": 14,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -705,12 +705,12 @@ Array [
     "kind": "SHIP",
     "location": "PORT",
     "time": 2,
-    "transport_id": 15,
+    "transport_id": 20,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 10,
+        "cargo_id": 13,
         "destination": "B",
         "origin": "FACTORY",
       },
@@ -719,7 +719,7 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 5,
-    "transport_id": 13,
+    "transport_id": 18,
   },
   Object {
     "destination": "FACTORY",
@@ -727,12 +727,12 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 5,
-    "transport_id": 13,
+    "transport_id": 18,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 11,
+        "cargo_id": 14,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -741,12 +741,12 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 8,
-    "transport_id": 15,
+    "transport_id": 20,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 11,
+        "cargo_id": 14,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -755,7 +755,7 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 9,
-    "transport_id": 15,
+    "transport_id": 20,
   },
   Object {
     "destination": "PORT",
@@ -763,21 +763,21 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 9,
-    "transport_id": 15,
+    "transport_id": 20,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 10,
-    "transport_id": 13,
+    "transport_id": 18,
   },
   Object {
     "event": "ARRIVE",
     "kind": "SHIP",
     "location": "PORT",
     "time": 15,
-    "transport_id": 15,
+    "transport_id": 20,
   },
 ]
 `;
@@ -787,109 +787,6 @@ Array [
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 12,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-    ],
-    "destination": "PORT",
-    "event": "DEPART",
-    "kind": "TRUCK",
-    "location": "FACTORY",
-    "time": 0,
-    "transport_id": 16,
-  },
-  Object {
-    "cargo": Array [
-      Cargo {
-        "cargo_id": 13,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-    ],
-    "destination": "PORT",
-    "event": "DEPART",
-    "kind": "TRUCK",
-    "location": "FACTORY",
-    "time": 0,
-    "transport_id": 17,
-  },
-  Object {
-    "cargo": Array [
-      Cargo {
-        "cargo_id": 12,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-    ],
-    "event": "ARRIVE",
-    "kind": "TRUCK",
-    "location": "PORT",
-    "time": 1,
-    "transport_id": 16,
-  },
-  Object {
-    "cargo": Array [
-      Cargo {
-        "cargo_id": 13,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-    ],
-    "event": "ARRIVE",
-    "kind": "TRUCK",
-    "location": "PORT",
-    "time": 1,
-    "transport_id": 17,
-  },
-  Object {
-    "destination": "FACTORY",
-    "event": "DEPART",
-    "kind": "TRUCK",
-    "location": "PORT",
-    "time": 1,
-    "transport_id": 16,
-  },
-  Object {
-    "destination": "FACTORY",
-    "event": "DEPART",
-    "kind": "TRUCK",
-    "location": "PORT",
-    "time": 1,
-    "transport_id": 17,
-  },
-  Object {
-    "event": "ARRIVE",
-    "kind": "TRUCK",
-    "location": "FACTORY",
-    "time": 2,
-    "transport_id": 16,
-  },
-  Object {
-    "event": "ARRIVE",
-    "kind": "TRUCK",
-    "location": "FACTORY",
-    "time": 2,
-    "transport_id": 17,
-  },
-  Object {
-    "cargo": Array [
-      Cargo {
-        "cargo_id": 14,
-        "destination": "B",
-        "origin": "FACTORY",
-      },
-    ],
-    "destination": "B",
-    "event": "DEPART",
-    "kind": "TRUCK",
-    "location": "FACTORY",
-    "time": 2,
-    "transport_id": 18,
-  },
-  Object {
-    "cargo": Array [
-      Cargo {
         "cargo_id": 15,
         "destination": "A",
         "origin": "FACTORY",
@@ -899,8 +796,23 @@ Array [
     "event": "DEPART",
     "kind": "TRUCK",
     "location": "FACTORY",
-    "time": 2,
-    "transport_id": 19,
+    "time": 0,
+    "transport_id": 21,
+  },
+  Object {
+    "cargo": Array [
+      Cargo {
+        "cargo_id": 16,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+    ],
+    "destination": "PORT",
+    "event": "DEPART",
+    "kind": "TRUCK",
+    "location": "FACTORY",
+    "time": 0,
+    "transport_id": 22,
   },
   Object {
     "cargo": Array [
@@ -913,89 +825,72 @@ Array [
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "PORT",
-    "time": 3,
-    "transport_id": 19,
+    "time": 1,
+    "transport_id": 21,
+  },
+  Object {
+    "cargo": Array [
+      Cargo {
+        "cargo_id": 16,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+    ],
+    "event": "ARRIVE",
+    "kind": "TRUCK",
+    "location": "PORT",
+    "time": 1,
+    "transport_id": 22,
+  },
+  Object {
+    "cargo": Array [
+      Cargo {
+        "cargo_id": 15,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+      Cargo {
+        "cargo_id": 16,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+    ],
+    "destination": "A",
+    "event": "LOAD",
+    "kind": "SHIP",
+    "location": "PORT",
+    "time": 1,
+    "transport_id": 25,
   },
   Object {
     "destination": "FACTORY",
     "event": "DEPART",
     "kind": "TRUCK",
     "location": "PORT",
-    "time": 3,
-    "transport_id": 19,
-  },
-  Object {
-    "event": "ARRIVE",
-    "kind": "TRUCK",
-    "location": "FACTORY",
-    "time": 4,
-    "transport_id": 19,
-  },
-  Object {
-    "cargo": Array [
-      Cargo {
-        "cargo_id": 16,
-        "destination": "B",
-        "origin": "FACTORY",
-      },
-    ],
-    "destination": "B",
-    "event": "DEPART",
-    "kind": "TRUCK",
-    "location": "FACTORY",
-    "time": 4,
-    "transport_id": 20,
-  },
-  Object {
-    "cargo": Array [
-      Cargo {
-        "cargo_id": 14,
-        "destination": "B",
-        "origin": "FACTORY",
-      },
-    ],
-    "event": "ARRIVE",
-    "kind": "TRUCK",
-    "location": "B",
-    "time": 7,
-    "transport_id": 18,
+    "time": 1,
+    "transport_id": 21,
   },
   Object {
     "destination": "FACTORY",
     "event": "DEPART",
     "kind": "TRUCK",
-    "location": "B",
-    "time": 7,
-    "transport_id": 18,
-  },
-  Object {
-    "cargo": Array [
-      Cargo {
-        "cargo_id": 16,
-        "destination": "B",
-        "origin": "FACTORY",
-      },
-    ],
-    "event": "ARRIVE",
-    "kind": "TRUCK",
-    "location": "B",
-    "time": 9,
-    "transport_id": 20,
-  },
-  Object {
-    "destination": "FACTORY",
-    "event": "DEPART",
-    "kind": "TRUCK",
-    "location": "B",
-    "time": 9,
-    "transport_id": 20,
+    "location": "PORT",
+    "time": 1,
+    "transport_id": 22,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
-    "time": 12,
-    "transport_id": 18,
+    "time": 2,
+    "transport_id": 21,
+  },
+  Object {
+    "event": "ARRIVE",
+    "kind": "TRUCK",
+    "location": "FACTORY",
+    "time": 2,
+    "transport_id": 22,
   },
   Object {
     "cargo": Array [
@@ -1009,15 +904,8 @@ Array [
     "event": "DEPART",
     "kind": "TRUCK",
     "location": "FACTORY",
-    "time": 12,
-    "transport_id": 21,
-  },
-  Object {
-    "event": "ARRIVE",
-    "kind": "TRUCK",
-    "location": "FACTORY",
-    "time": 14,
-    "transport_id": 20,
+    "time": 2,
+    "transport_id": 23,
   },
   Object {
     "cargo": Array [
@@ -1031,8 +919,28 @@ Array [
     "event": "DEPART",
     "kind": "TRUCK",
     "location": "FACTORY",
-    "time": 14,
-    "transport_id": 22,
+    "time": 2,
+    "transport_id": 24,
+  },
+  Object {
+    "cargo": Array [
+      Cargo {
+        "cargo_id": 15,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+      Cargo {
+        "cargo_id": 16,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+    ],
+    "destination": "A",
+    "event": "DEPART",
+    "kind": "SHIP",
+    "location": "PORT",
+    "time": 2,
+    "transport_id": 25,
   },
   Object {
     "cargo": Array [
@@ -1045,28 +953,203 @@ Array [
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "PORT",
-    "time": 15,
-    "transport_id": 22,
+    "time": 3,
+    "transport_id": 24,
+  },
+  Object {
+    "destination": "FACTORY",
+    "event": "DEPART",
+    "kind": "TRUCK",
+    "location": "PORT",
+    "time": 3,
+    "transport_id": 24,
+  },
+  Object {
+    "event": "ARRIVE",
+    "kind": "TRUCK",
+    "location": "FACTORY",
+    "time": 4,
+    "transport_id": 24,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 12,
-        "destination": "A",
+        "cargo_id": 19,
+        "destination": "B",
         "origin": "FACTORY",
       },
+    ],
+    "destination": "B",
+    "event": "DEPART",
+    "kind": "TRUCK",
+    "location": "FACTORY",
+    "time": 4,
+    "transport_id": 26,
+  },
+  Object {
+    "cargo": Array [
       Cargo {
-        "cargo_id": 13,
-        "destination": "A",
+        "cargo_id": 17,
+        "destination": "B",
         "origin": "FACTORY",
       },
+    ],
+    "event": "ARRIVE",
+    "kind": "TRUCK",
+    "location": "B",
+    "time": 7,
+    "transport_id": 23,
+  },
+  Object {
+    "destination": "FACTORY",
+    "event": "DEPART",
+    "kind": "TRUCK",
+    "location": "B",
+    "time": 7,
+    "transport_id": 23,
+  },
+  Object {
+    "cargo": Array [
       Cargo {
         "cargo_id": 15,
         "destination": "A",
         "origin": "FACTORY",
       },
       Cargo {
+        "cargo_id": 16,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+    ],
+    "event": "ARRIVE",
+    "kind": "SHIP",
+    "location": "A",
+    "time": 8,
+    "transport_id": 25,
+  },
+  Object {
+    "cargo": Array [
+      Cargo {
+        "cargo_id": 19,
+        "destination": "B",
+        "origin": "FACTORY",
+      },
+    ],
+    "event": "ARRIVE",
+    "kind": "TRUCK",
+    "location": "B",
+    "time": 9,
+    "transport_id": 26,
+  },
+  Object {
+    "cargo": Array [
+      Cargo {
+        "cargo_id": 15,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+      Cargo {
+        "cargo_id": 16,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+    ],
+    "event": "UNLOAD",
+    "kind": "SHIP",
+    "location": "A",
+    "time": 9,
+    "transport_id": 25,
+  },
+  Object {
+    "destination": "PORT",
+    "event": "DEPART",
+    "kind": "SHIP",
+    "location": "A",
+    "time": 9,
+    "transport_id": 25,
+  },
+  Object {
+    "destination": "FACTORY",
+    "event": "DEPART",
+    "kind": "TRUCK",
+    "location": "B",
+    "time": 9,
+    "transport_id": 26,
+  },
+  Object {
+    "event": "ARRIVE",
+    "kind": "TRUCK",
+    "location": "FACTORY",
+    "time": 12,
+    "transport_id": 23,
+  },
+  Object {
+    "cargo": Array [
+      Cargo {
+        "cargo_id": 20,
+        "destination": "B",
+        "origin": "FACTORY",
+      },
+    ],
+    "destination": "B",
+    "event": "DEPART",
+    "kind": "TRUCK",
+    "location": "FACTORY",
+    "time": 12,
+    "transport_id": 27,
+  },
+  Object {
+    "event": "ARRIVE",
+    "kind": "TRUCK",
+    "location": "FACTORY",
+    "time": 14,
+    "transport_id": 26,
+  },
+  Object {
+    "cargo": Array [
+      Cargo {
+        "cargo_id": 21,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+    ],
+    "destination": "PORT",
+    "event": "DEPART",
+    "kind": "TRUCK",
+    "location": "FACTORY",
+    "time": 14,
+    "transport_id": 28,
+  },
+  Object {
+    "event": "ARRIVE",
+    "kind": "SHIP",
+    "location": "PORT",
+    "time": 15,
+    "transport_id": 25,
+  },
+  Object {
+    "cargo": Array [
+      Cargo {
+        "cargo_id": 21,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+    ],
+    "event": "ARRIVE",
+    "kind": "TRUCK",
+    "location": "PORT",
+    "time": 15,
+    "transport_id": 28,
+  },
+  Object {
+    "cargo": Array [
+      Cargo {
         "cargo_id": 18,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+      Cargo {
+        "cargo_id": 21,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -1076,7 +1159,7 @@ Array [
     "kind": "SHIP",
     "location": "PORT",
     "time": 15,
-    "transport_id": 23,
+    "transport_id": 30,
   },
   Object {
     "destination": "FACTORY",
@@ -1084,49 +1167,19 @@ Array [
     "kind": "TRUCK",
     "location": "PORT",
     "time": 15,
-    "transport_id": 22,
+    "transport_id": 28,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 16,
-    "transport_id": 22,
+    "transport_id": 28,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 12,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-      Cargo {
-        "cargo_id": 13,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-      Cargo {
-        "cargo_id": 15,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-      Cargo {
-        "cargo_id": 18,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-    ],
-    "destination": "A",
-    "event": "DEPART",
-    "kind": "SHIP",
-    "location": "PORT",
-    "time": 16,
-    "transport_id": 23,
-  },
-  Object {
-    "cargo": Array [
-      Cargo {
-        "cargo_id": 19,
+        "cargo_id": 22,
         "destination": "B",
         "origin": "FACTORY",
       },
@@ -1136,12 +1189,32 @@ Array [
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 16,
-    "transport_id": 24,
+    "transport_id": 29,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 17,
+        "cargo_id": 18,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+      Cargo {
+        "cargo_id": 21,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+    ],
+    "destination": "A",
+    "event": "DEPART",
+    "kind": "SHIP",
+    "location": "PORT",
+    "time": 16,
+    "transport_id": 30,
+  },
+  Object {
+    "cargo": Array [
+      Cargo {
+        "cargo_id": 20,
         "destination": "B",
         "origin": "FACTORY",
       },
@@ -1150,7 +1223,7 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 17,
-    "transport_id": 21,
+    "transport_id": 27,
   },
   Object {
     "destination": "FACTORY",
@@ -1158,12 +1231,12 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 17,
-    "transport_id": 21,
+    "transport_id": 27,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 19,
+        "cargo_id": 22,
         "destination": "B",
         "origin": "FACTORY",
       },
@@ -1172,7 +1245,7 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 21,
-    "transport_id": 24,
+    "transport_id": 29,
   },
   Object {
     "destination": "FACTORY",
@@ -1180,34 +1253,24 @@ Array [
     "kind": "TRUCK",
     "location": "B",
     "time": 21,
-    "transport_id": 24,
+    "transport_id": 29,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 22,
-    "transport_id": 21,
+    "transport_id": 27,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 12,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-      Cargo {
-        "cargo_id": 13,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-      Cargo {
-        "cargo_id": 15,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-      Cargo {
         "cargo_id": 18,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+      Cargo {
+        "cargo_id": 21,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -1216,27 +1279,17 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 22,
-    "transport_id": 23,
+    "transport_id": 30,
   },
   Object {
     "cargo": Array [
       Cargo {
-        "cargo_id": 12,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-      Cargo {
-        "cargo_id": 13,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-      Cargo {
-        "cargo_id": 15,
-        "destination": "A",
-        "origin": "FACTORY",
-      },
-      Cargo {
         "cargo_id": 18,
+        "destination": "A",
+        "origin": "FACTORY",
+      },
+      Cargo {
+        "cargo_id": 21,
         "destination": "A",
         "origin": "FACTORY",
       },
@@ -1245,7 +1298,7 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 23,
-    "transport_id": 23,
+    "transport_id": 30,
   },
   Object {
     "destination": "PORT",
@@ -1253,21 +1306,21 @@ Array [
     "kind": "SHIP",
     "location": "A",
     "time": 23,
-    "transport_id": 23,
+    "transport_id": 30,
   },
   Object {
     "event": "ARRIVE",
     "kind": "TRUCK",
     "location": "FACTORY",
     "time": 26,
-    "transport_id": 24,
+    "transport_id": 29,
   },
   Object {
     "event": "ARRIVE",
     "kind": "SHIP",
     "location": "PORT",
     "time": 29,
-    "transport_id": 23,
+    "transport_id": 30,
   },
 ]
 `;

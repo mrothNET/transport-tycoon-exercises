@@ -16,7 +16,7 @@ export class TransportTycoon {
       .fill(new TourPublisher("TRUCK", this.eventStore))
       .map(tourPublisher => new Vehicle(tourPublisher));
 
-    this.ship = new Ship("PORT", "A", 4, new TourPublisher("SHIP", this.eventStore));
+    this.ship = new Ship(4, new TourPublisher("SHIP", this.eventStore));
   }
 
   public getAllEvents() {
@@ -27,7 +27,7 @@ export class TransportTycoon {
     switch (cargo.destination) {
       case "A":
         const arrivalAtPort = this.firstAvailableTruck().book("FACTORY", "PORT", cargo);
-        this.ship.book(arrivalAtPort, cargo);
+        this.ship.book(arrivalAtPort, "PORT", "A", cargo);
         break;
 
       case "B":
