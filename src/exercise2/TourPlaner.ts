@@ -18,6 +18,7 @@ export class TourPlaner {
 
   constructor(travel: Duration);
   constructor(loading: Duration, travel: Duration, unloading: Duration);
+
   constructor(...args: Duration[]) {
     if (args.length === 1) {
       const [travel] = args;

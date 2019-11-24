@@ -12,7 +12,7 @@ test("Events for a simple tour", () => {
     arrival: 2,
     returnDeparture: 3,
     returnArrival: 4,
-    cargoAvailableDestination: 3
+    cargoAvailableDestination: 3,
   };
 
   publisher.publish("A", "B", plan, [] as Cargo[]);
@@ -46,7 +46,7 @@ test("Events for a load/unload tour", () => {
     unload: 4,
     returnDeparture: 5,
     returnArrival: 6,
-    cargoAvailableDestination: 5
+    cargoAvailableDestination: 5,
   };
 
   publisher.publish("A", "B", plan, [] as Cargo[]);

@@ -10,15 +10,14 @@ export class Vehicle {
 
   private schedule?: { loading: Time; origin: Location; destination: Location; cargo: Cargo[]; tourPlan: TourPlan };
 
-  constructor(private capacity: number, private tourPublisher: TourPublisher) {
-  }
+  constructor(private capacity: number, private tourPublisher: TourPublisher) {}
 
-  public book(arrivalAtPort: Time, origin: Location, destination: Location, cargo: Cargo): Time {
-    if (this.scheduleMismatches(arrivalAtPort, origin, destination)) {
+  public book(arrivalAtOrigin: Time, origin: Location, destination: Location, cargo: Cargo): Time {
+    if (this.scheduleMismatches(arrivalAtOrigin, origin, destination)) {
       this.makeJourney();
     }
 
-    this.scheduleCargo(arrivalAtPort, origin, destination, cargo);
+    this.scheduleCargo(arrivalAtOrigin, origin, destination, cargo);
     const { cargoAvailableDestination } = this.schedule!.tourPlan;
 
     if (this.capacityExhausted()) {
@@ -35,23 +34,23 @@ export class Vehicle {
   }
 
   private capacityExhausted(): boolean {
-    return (this.schedule?.cargo?.length ?? 0) >= this.capacity;
+    return (this.schedule?.cargo.length ?? 0) >= this.capacity;
   }
 
-  private scheduleMismatches(arrivalAtPort: Time, origin: Location, destination: Location): boolean {
+  private scheduleMismatches(arrivalAtOrigin: Time, origin: Location, destination: Location): boolean {
     return (
       !!this.schedule &&
-      (this.schedule.loading < arrivalAtPort ||
+      (this.schedule.loading < arrivalAtOrigin ||
         this.schedule.origin !== origin ||
         this.schedule.destination !== destination)
     );
   }
 
-  private scheduleCargo(arrivalAtPort: Time, origin: Location, destination: Location, cargo: Cargo): void {
+  private scheduleCargo(arrivalAtOrigin: Time, origin: Location, destination: Location, cargo: Cargo): void {
     if (this.schedule) {
       this.schedule.cargo.push(cargo);
     } else {
-      const loading = Math.max(this.available, arrivalAtPort);
+      const loading = Math.max(this.available, arrivalAtOrigin);
       const tourPlaner = getTourPlaner(origin, destination);
       const tourPlan = tourPlaner.schedule(loading);
       this.schedule = { loading, origin, destination, cargo: [cargo], tourPlan };
