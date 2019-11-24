@@ -1,31 +1,31 @@
 import { Cargo } from "./Cargo";
-import { EventStore } from "./EventStore";
+import { createUniqueTransportID, EventStore } from "./EventStore";
 import { Location } from "./Location";
 import { TourPlan } from "./TourPlaner";
 
 export class TourPublisher {
-  constructor(private readonly kind: string, private readonly eventStore: EventStore) {
-  }
+  constructor(private readonly kind: string, private readonly eventStore: EventStore) {}
 
   public publish(origin: Location, destination: Location, tourPlan: TourPlan, cargo: Cargo[]): void {
-    const metadata = { transport_id: this.eventStore.createUniqueTransportID(), kind: this.kind };
+    const metadata = { transport_id: createUniqueTransportID(), kind: this.kind };
+    const { loading, departure, arrival, unload, returnDeparture, returnArrival } = tourPlan;
 
-    if (tourPlan.loading) {
-      this.eventStore.push({ ...metadata, event: "LOAD", time: tourPlan.loading, location: origin, destination, cargo }); // prettier-ignore
+    if (loading) {
+      this.eventStore.publish({ ...metadata, event: "LOAD", time: loading, location: origin, destination, cargo });
     }
 
-    this.eventStore.push(
-      { ...metadata, event: "DEPART", time: tourPlan.departure, location: origin, destination, cargo },
-      { ...metadata, event: "ARRIVE", time: tourPlan.arrival, location: destination, cargo },
+    this.eventStore.publish(
+      { ...metadata, event: "DEPART", time: departure, location: origin, destination, cargo },
+      { ...metadata, event: "ARRIVE", time: arrival, location: destination, cargo },
     );
 
-    if (tourPlan.unload) {
-      this.eventStore.push({ ...metadata, event: "UNLOAD", time: tourPlan.unload, location: destination, cargo });
+    if (unload) {
+      this.eventStore.publish({ ...metadata, event: "UNLOAD", time: unload, location: destination, cargo });
     }
 
-    this.eventStore.push(
-      { ...metadata, event: "DEPART", time: tourPlan.returnDeparture, location: destination, destination: origin },
-      { ...metadata, event: "ARRIVE", time: tourPlan.returnArrival, location: origin },
+    this.eventStore.publish(
+      { ...metadata, event: "DEPART", time: returnDeparture, location: destination, destination: origin },
+      { ...metadata, event: "ARRIVE", time: returnArrival, location: origin },
     );
   }
 }
