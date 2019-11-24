@@ -1,5 +1,5 @@
 {
-  "include": ["src"],
+  "include": ["cli.ts", "exercise1/src", "exercise2/src"],
   "exclude": ["node_modules", "src/**/*.test.ts", "src/**/__tests__" ],
 
   "compilerOptions": {

@@ -3,8 +3,8 @@
 import { bold, redBright } from "chalk";
 import * as program from "commander";
 import { writeFileSync } from "fs";
-import exercise1 from "./exercise1";
-import exercise2 from "./exercise2";
+import exercise1 from "./exercise1/src";
+import exercise2 from "./exercise2/src";
 
 function cmdExercise1(args: string[]) {
   for (const cargoList of args) {
