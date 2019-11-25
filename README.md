@@ -17,8 +17,8 @@ TBW.
 
 ## Exercises
 
-* [Exercise 1](exercise1/README.md)
-* [Exercise 2](exercise2/README.md)
+* [Exercise 1](exercise1)
+* [Exercise 2](exercise2)
 
 
 ## Author
