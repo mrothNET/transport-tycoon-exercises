@@ -21,7 +21,7 @@ I misinterpreted the semantic of `transport_id`. Thought it was a unique ID for 
 
 ## Implementation
 
-My solution is written in TypeScript and the core uses about xxx lines of code:
+My solution is written in TypeScript and the core uses about 160 lines of code:
 
 ```typescript
 function exercise2(cargoList: string): Event[] {
