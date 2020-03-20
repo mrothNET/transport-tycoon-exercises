@@ -52,7 +52,8 @@
   },
   "jest": {
     "roots": [
-      "src"
+      "exercise1/src",
+      "exercise2/src"
     ],
     "preset": "ts-jest",
     "testEnvironment": "node"
