@@ -23,7 +23,7 @@
     "clean": "rm -rf lib",
     "test": "jest --all",
     "watch": "jest --watch",
-    "format": "prettier --write 'src/**/*.ts'",
+    "format": "prettier --write 'exercise[12]/**/*.ts'",
     "lint": "tslint -p .",
     "prepare": "npm run clean && npm run build",
     "prepublishOnly": "npm run lint && npm test",
