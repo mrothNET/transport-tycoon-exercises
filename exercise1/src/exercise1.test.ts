@@ -1,7 +1,7 @@
 import { exercise1 } from "./exercise1";
 import { Time } from "./Time";
 
-const testVectors: Array<[string, Time]> = [
+const testVectors: [string, Time][] = [
   ["A", 5],
   ["B", 5],
   ["AA", 13],
