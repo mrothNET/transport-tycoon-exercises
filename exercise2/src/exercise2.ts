@@ -9,8 +9,8 @@ export function exercise2(cargoList: string): Event[] {
   cargoList
     .split("")
     .map(stringToDestination)
-    .map(destination => new Cargo("FACTORY", destination))
-    .forEach(cargo => tt.book(cargo));
+    .map((destination) => new Cargo("FACTORY", destination))
+    .forEach((cargo) => tt.book(cargo));
 
   tt.closeBooking();
 

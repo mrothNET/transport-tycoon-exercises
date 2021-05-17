@@ -35,8 +35,8 @@ test("updated ship rules", () => {
   const secondCargoId = firstCargoId + 1;
   const thirdCargoId = secondCargoId + 1;
 
-  const events1 = events.filter(e => e.cargo && e.cargo[0].cargo_id === firstCargoId);
-  expect(events1.map(e => e.event)).toEqual([
+  const events1 = events.filter((e) => e.cargo && e.cargo[0].cargo_id === firstCargoId);
+  expect(events1.map((e) => e.event)).toEqual([
     "LOAD",
     "DEPART",
     "ARRIVE",
@@ -46,10 +46,10 @@ test("updated ship rules", () => {
     "ARRIVE",
     "UNLOAD",
   ]);
-  expect(events1.map(e => e.time)).toEqual([0, 0, 1, 1, 1, 2, 8, 8]);
+  expect(events1.map((e) => e.time)).toEqual([0, 0, 1, 1, 1, 2, 8, 8]);
 
-  const events3 = events.filter(e => e.cargo && e.cargo[0].cargo_id === thirdCargoId);
-  expect(events3.map(e => e.event)).toEqual([
+  const events3 = events.filter((e) => e.cargo && e.cargo[0].cargo_id === thirdCargoId);
+  expect(events3.map((e) => e.event)).toEqual([
     "LOAD",
     "DEPART",
     "ARRIVE",
@@ -59,7 +59,7 @@ test("updated ship rules", () => {
     "ARRIVE",
     "UNLOAD",
   ]);
-  expect(events3.map(e => e.time)).toEqual([2, 2, 3, 3, 15, 16, 22, 22]);
+  expect(events3.map((e) => e.time)).toEqual([2, 2, 3, 3, 15, 16, 22, 22]);
 });
 
 test('exercise2("AABABBAB")', () => {

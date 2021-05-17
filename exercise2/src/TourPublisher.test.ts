@@ -22,12 +22,12 @@ test("Events for a simple tour", () => {
 
   const events = evs.getAllEvents();
 
-  expect(events.map(e => e.kind)).toEqual(["TEST", "TEST", "TEST", "TEST", "TEST", "TEST"]);
-  expect(events.map(e => e.event)).toEqual(["LOAD", "DEPART", "ARRIVE", "UNLOAD", "DEPART", "ARRIVE"]);
-  expect(events.map(e => e.location)).toEqual(["A", "A", "B", "B", "B", "A"]);
-  expect(events.map(e => e.time)).toEqual([1, 1, 2, 2, 3, 4]);
-  expect(events.map(e => e.destination)).toEqual(["B", "B", undefined, undefined, "A", undefined]);
-  expect(events.map(e => e.cargo)).toEqual([[], [], [], [], undefined, undefined]);
+  expect(events.map((e) => e.kind)).toEqual(["TEST", "TEST", "TEST", "TEST", "TEST", "TEST"]);
+  expect(events.map((e) => e.event)).toEqual(["LOAD", "DEPART", "ARRIVE", "UNLOAD", "DEPART", "ARRIVE"]);
+  expect(events.map((e) => e.location)).toEqual(["A", "A", "B", "B", "B", "A"]);
+  expect(events.map((e) => e.time)).toEqual([1, 1, 2, 2, 3, 4]);
+  expect(events.map((e) => e.destination)).toEqual(["B", "B", undefined, undefined, "A", undefined]);
+  expect(events.map((e) => e.cargo)).toEqual([[], [], [], [], undefined, undefined]);
 });
 
 test("Events for a load/unload tour", () => {
@@ -49,10 +49,10 @@ test("Events for a load/unload tour", () => {
 
   const events = evs.getAllEvents();
 
-  expect(events.map(e => e.kind)).toEqual(["TEST", "TEST", "TEST", "TEST", "TEST", "TEST"]);
-  expect(events.map(e => e.event)).toEqual(["LOAD", "DEPART", "ARRIVE", "UNLOAD", "DEPART", "ARRIVE"]);
-  expect(events.map(e => e.location)).toEqual(["A", "A", "B", "B", "B", "A"]);
-  expect(events.map(e => e.time)).toEqual([1, 2, 3, 3, 5, 6]);
+  expect(events.map((e) => e.kind)).toEqual(["TEST", "TEST", "TEST", "TEST", "TEST", "TEST"]);
+  expect(events.map((e) => e.event)).toEqual(["LOAD", "DEPART", "ARRIVE", "UNLOAD", "DEPART", "ARRIVE"]);
+  expect(events.map((e) => e.location)).toEqual(["A", "A", "B", "B", "B", "A"]);
+  expect(events.map((e) => e.time)).toEqual([1, 2, 3, 3, 5, 6]);
 
   expect(events[0].destination).toEqual("B");
   expect(events[1].destination).toEqual("B");

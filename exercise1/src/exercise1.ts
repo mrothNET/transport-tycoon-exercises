@@ -8,7 +8,7 @@ export function exercise1(cargoList: string): Time {
   const deliverTimes = cargoList
     .split("")
     .map(stringToDestination)
-    .map(destination => tt.book(destination));
+    .map((destination) => tt.book(destination));
 
   return Math.max(...deliverTimes);
 }
