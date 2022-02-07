@@ -12,7 +12,9 @@ function cmdExercise1(args: string[]) {
       const totalDeliveryTime = exercise1(cargoList);
       console.log(`${cargoList}: ${bold(totalDeliveryTime)}`);
     } catch (error) {
-      console.error(`${cargoList}: ${redBright(error.message)}`);
+      if (error instanceof Error) {
+        console.error(`${cargoList}: ${redBright(error.message)}`);
+      }
     }
   }
 }
@@ -20,17 +22,19 @@ function cmdExercise1(args: string[]) {
 function cmdExercise2(arg: string, logFile?: string) {
   try {
     const events = exercise2(arg);
-    const lines = events.map(event => JSON.stringify(event));
+    const lines = events.map((event) => JSON.stringify(event));
 
     if (logFile) {
       lines.push("");
       writeFileSync(logFile, lines.join("\n"));
       console.log(`${bold(events.length)} events written to: ${bold(logFile)}`);
     } else {
-      lines.forEach(line => console.log(line));
+      lines.forEach((line) => console.log(line));
     }
   } catch (error) {
-    console.error(`${arg}: ${redBright(error.message)}`);
+    if (error instanceof Error) {
+      console.error(`${arg}: ${redBright(error.message)}`);
+    }
   }
 }
 
